@@ -1,0 +1,47 @@
+::selection {
+  background-color: $indigo;
+  color: $white;
+}
+
+html,
+body {
+  min-height: 100vh;
+  overflow: auto;
+}
+
+html {
+  font-size: 14px;
+
+  @media (min-width: 576px) {
+    font-size: 16px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 19px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 20px;
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $theme-white;
+  @include flex();
+  flex-direction: column;
+}
+
+a {
+  color: $theme-light-blue;
+  @include transition(color $transition-speed);
+}
+
+a:hover {
+  color: $theme-primary;
+}

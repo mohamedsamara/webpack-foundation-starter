@@ -5,6 +5,7 @@
   },
   "env": {
     "browser": true,
+    "node": true,
     "jquery": true
   },
   "plugins": ["jquery", "babel", "prettier"],

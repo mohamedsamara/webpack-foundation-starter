@@ -121,8 +121,8 @@ module.exports = merge(common, {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve('src/html/index.html'),
-      favicon: path.resolve('src/public/favicon.ico'),
+      template: path.resolve(__dirname, '../', 'src/html/index.html'),
+      favicon: path.resolve(__dirname, '../', 'src/public/images/favicon.ico'),
       inject: true,
       minify: {
         removeComments: true,
