@@ -1,0 +1,31 @@
+{
+  "name": "webpack-foundation-starter",
+  "version": "1.0.0",
+  "description": "Webpack Foundation Starter",
+  "main": "index.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --mode=production --progress --config webpack/webpack.prod.js",
+    "serve": "serve build",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --mode=development --open --config webpack/webpack.dev.js",
+    "start": "npm run dev",
+    "lint": "eslint src/js/*.js --ignore-path .eslintignore",
+    "lint:fix": "eslint src/js/*.js --fix --ignore-path .eslintignore",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamedsamara/webpack-foundation-starter.git"
+  },
+  "keywords": [
+    "webpack",
+    "jquery",
+    "foundation",
+    "sass"
+  ],
+  "author": "Mohamed Samara (https://github.com/mohamedsamara)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohamedsamara/webpack-foundation-starter/issues"
+  },
+  "homepage": "https://github.com/mohamedsamara/webpack-foundation-starter#readme"
+}
