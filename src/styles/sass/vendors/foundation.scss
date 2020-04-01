@@ -4,9 +4,6 @@
 @import '~foundation-sites/scss/foundation';
 @import '~motion-ui/motion-ui.scss';
 
-// @import 'settings';
-// @import 'foundation';
-
 // @include foundation-everything;
 
 // Global styles
@@ -65,5 +62,5 @@
 // @include foundation-prototype-classes;
 
 // Motion UI
-// @include motion-ui-transitions;
-// @include motion-ui-animations;
+@include motion-ui-transitions;
+@include motion-ui-animations;

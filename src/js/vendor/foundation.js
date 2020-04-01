@@ -1,3 +1,3 @@
-// import Foundation from 'foundation-sites';
+import 'foundation-sites';
 
 $(document).foundation();

@@ -19,8 +19,28 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.(scss|sass)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.(scss|sass|css)$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|ico)$/,
