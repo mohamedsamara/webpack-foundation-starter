@@ -2,7 +2,7 @@
 
 ## Description
 
-This project provides a template starter for Zurb Foundation framework with webpack
+This project provides a template starter for Zurb Foundation framework with webpack. Pug template engine is used to generate html templates and Sass is implemented to import and include Foundation Sass files 
 
 ## Install
 
@@ -43,6 +43,8 @@ $ npm run serve
 - [jQuery](https://jquery.com/)
 
 - [Foundation](https://get.foundation/)
+
+- [Pug](https://pugjs.org/)
 
 - [Sass](https://sass-lang.com/)
 
