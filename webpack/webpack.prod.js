@@ -8,7 +8,6 @@ const { HashedModuleIdsPlugin } = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const common = require('./webpack.common');
 
@@ -62,15 +61,6 @@ module.exports = merge(common, {
           },
         ],
       },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-            options: { minimize: true },
-          },
-        ],
-      },
     ],
   },
   performance: {
@@ -120,23 +110,6 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../', 'src/html/index.html'),
-      favicon: path.resolve(__dirname, '../', 'src/public/images/favicon.ico'),
-      inject: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeRedundantAttributes: true,
-        useShortDoctype: true,
-        removeEmptyAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true,
-      },
-    }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
     }),

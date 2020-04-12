@@ -7,6 +7,9 @@ const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const helpers = require('./helpers');
+
+const pages = helpers.getPages();
 const NODE_ENV = process.env.NODE_ENV;
 
 module.exports = {
@@ -27,12 +30,17 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /(node_modules)/,
       },
+      {
+        test: /\.pug$/,
+        loader: 'pug-loader',
+      },
     ],
   },
   resolve: {
     extensions: ['.js', '.json', '.css', '.scss', '.html'],
   },
   plugins: [
+    ...pages,
     new CopyWebpackPlugin([{ from: 'src/public' }]),
     new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({

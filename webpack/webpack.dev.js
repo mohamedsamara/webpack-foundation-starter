@@ -5,7 +5,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const common = require('./webpack.common');
 
@@ -66,40 +65,15 @@ module.exports = merge(common, {
           },
         ],
       },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-          },
-        ],
-      },
     ],
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../', 'src/html/index.html'),
-      favicon: path.resolve(__dirname, '../', 'src/public/images/favicon.ico'),
-      inject: true,
-    }),
-  ],
+  plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
     port: 3000,
-    open: true,
+    historyApiFallback: true,
+    disableHostCheck: false,
     inline: true,
     compress: true,
-    noInfo: false,
     hot: true,
-    disableHostCheck: false,
-    historyApiFallback: true,
-    stats: {
-      colors: true,
-      hash: false,
-      timings: true,
-      chunks: false,
-      chunkModules: false,
-      modules: false,
-    },
   },
 });
